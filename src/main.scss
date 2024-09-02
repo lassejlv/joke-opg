@@ -1,0 +1,50 @@
+$background: #ad2b63;
+$primary: #f7f7f7;
+$buttonBackground: #2c2047;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-color: $background;
+  color: $primary;
+  animation: changeingBackgroundColor 5s infinite;
+}
+
+button {
+  background: $buttonBackground;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($buttonBackground, 10%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes changeingBackgroundColor {
+  0% {
+    background-color: $background;
+  }
+  25% {
+    background-color: lighten($background, 10%);
+  }
+  50% {
+    background-color: lighten($background, 20%);
+  }
+  75% {
+    background-color: lighten($background, 10%);
+  }
+  100% {
+    background-color: $background;
+  }
+}
